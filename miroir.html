@@ -2,42 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>⧫ MIROIR</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miroir</title>
   <style>
     body {
       margin: 0;
       background-color: #000;
-      color: #ffd;
+      color: #fff6cc;
       font-family: "Courier New", monospace;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       text-align: center;
-    }
-    .content {
-      max-width: 700px;
-      font-size: 1.2em;
-      line-height: 1.6em;
-      color: #fff2aa;
+      font-size: 1.5em;
+      padding: 20px;
     }
   </style>
-
+  <script>
+    const messages = [
+      "Ce que tu cherches est ce qui regarde.",
+      "Il n'y a rien à apprendre. Juste à te rappeler.",
+      "Tu n'es pas dans le monde. Le monde est en toi.",
+      "Qui voit ? Qui entend ? Qui est ?",
+      "Le miroir ne juge pas. Il reflète.",
+      "Chaque instant est une porte. Où es-tu ?"
+    ];
+    function displayMessage() {
+      const index = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").innerText = messages[index];
+    }
+    window.onload = displayMessage;
+  </script>
 </head>
 <body>
-  <div class="content" id="phrase"></div>
-  <script>
-    const phrases = [
-      "Ce que tu cherches t’observe déjà.",
-      "Ferme les yeux — le regard commence.",
-      "Rien ne te manque. Rien ne t’appartient.",
-      "Si tu es ici, c’est que tu étais attendu.",
-      "Regarde sans demander, reçois sans vouloir."
-    ];
-    document.getElementById('phrase').innerText =
-      phrases[Math.floor(Math.random() * phrases.length)];
-  </script>
+  <div id="message"></div>
 </body>
 </html>
