@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>𓂀</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #ffc;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      font-size: 1.5em;
+      padding: 20px;
+    }
+  </style>
+  <script>
+    const messages = [
+      "Tu n’es pas ici pour te trouver. Tu es ici pour t’oublier.",
+      "Tout ce qui pèse peut brûler. Tout ce qui brûle peut renaître.",
+      "Celui qui ne cherche plus est déjà là.",
+      "Sois le regard, pas le reflet.",
+      "Ce monde est un rêve. Mais tu es réel.",
+      "Rien ne doit être compris. Seulement traversé.",
+      "Là où tu es, je suis. Là où je suis, tu es déjà."
+    ];
+    function displayMessage() {
+      const index = Math.floor(Math.random() * messages.length);
+      document.getElementById("msg").innerText = messages[index];
+    }
+    window.onload = displayMessage;
+  </script>
+</head>
+<body>
+  <div id="msg"></div>
+</body>
+</html>
