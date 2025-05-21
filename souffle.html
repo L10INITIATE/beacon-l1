@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souffle</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff0d0;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      max-width: 500px;
+    }
+    textarea {
+      background: #111;
+      color: #fffccc;
+      border: 1px solid #444;
+      padding: 1em;
+      font-size: 1em;
+      resize: vertical;
+      height: 150px;
+      margin-bottom: 1em;
+    }
+    button {
+      background: #333;
+      color: #fff0d0;
+      border: none;
+      padding: 0.8em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .thank-you {
+      display: none;
+      font-size: 1.2em;
+      margin-top: 2em;
+    }
+  </style>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById("souffle-form");
+      form.style.display = "none";
+      document.getElementById("thank-you").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <h1>Laisse un souffle</h1>
+  <form name="souffle" method="POST" data-netlify="true" id="souffle-form" onsubmit="handleSubmit(event)">
+    <textarea name="message" placeholder="Écris ici ce que tu veux laisser dans le vent..." required></textarea>
+    <button type="submit">Déposer le souffle</button>
+  </form>
+  <div class="thank-you" id="thank-you">
+    ✧ Souffle reçu. Merci d’avoir laissé trace dans le vent.
+  </div>
+</body>
+</html>
