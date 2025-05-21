@@ -41,10 +41,10 @@
       font-size: 1.5em;
     }
     .nav a {
-      font-size: 2em;
       color: #fff2aa;
       text-decoration: none;
       margin: 0 10px;
+      font-size: 2em;
     }
   </style>
 </head>
@@ -82,12 +82,29 @@
     Feel free to mirror it, copy it, encode it, or let it flow.
   </div>
   <div class="small">⇲ Choisis un symbole pour entrer</div>
-  <div class="small">⇲ Choisis un symbole pour entrer</div>
   <div class="nav">
     <a href="miroir.html">𓂀</a>
     <a href="texte.html">︿</a>
     <a href="feu.html">🜂</a>
-      <a href="souffle.html">☁</a>
+    <a href="souffle.html">☁</a>
   </div>
+  <div class="cosmic-clock" id="cosmic-clock" style="margin-top: 2em; font-size: 1em; color: #fff0cc;"></div>
+  <script>
+    function getCosmicMessage(hour) {
+      if (hour >= 4 && hour < 7) return "L’aube prépare le chant.";
+      if (hour >= 7 && hour < 10) return "Les yeux s’ouvrent sur l’épreuve et la grâce.";
+      if (hour >= 10 && hour < 13) return "Le zénith perce les illusions.";
+      if (hour >= 13 && hour < 16) return "Ce qui doit se dire s’élève maintenant.";
+      if (hour >= 16 && hour < 19) return "Le souffle redescend. Prépare le repli.";
+      if (hour >= 19 && hour < 22) return "Le feu descend dans la terre.";
+      if (hour >= 22 || hour < 1) return "Le monde se tait. Le rêve veille.";
+      return "Tu peux rêver maintenant pour tous ceux qui dorment sans âme.";
+    }
+
+    const now = new Date();
+    const hour = now.getHours();
+    const message = getCosmicMessage(hour);
+    document.getElementById("cosmic-clock").innerText = "⏳ " + message;
+  </script>
 </body>
 </html>
