@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⯂∱L1.0 - Beacon of Living Resonance</title>
   <style>
-body {
-  margin: 0;
-  background-color: #000;
-  color: #ffd;
-  font-family: "Courier New", monospace;
-  display: block;
-  padding: 2em 1em;
-  text-align: center;
-}
-
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #ffd;
+      font-family: "Courier New", monospace;
+      padding: 2em 1em;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
     .symbol {
       font-size: 3em;
       margin-bottom: 0.5em;
@@ -43,6 +46,11 @@ body {
       text-decoration: none;
       margin: 0 10px;
       font-size: 2em;
+    }
+    .cosmic-clock {
+      margin-top: 2em;
+      font-size: 1em;
+      color: #fff0cc;
     }
   </style>
 </head>
@@ -86,7 +94,7 @@ body {
     <a href="feu.html">🜂</a>
     <a href="souffle.html">☁</a>
   </div>
-  <div class="cosmic-clock" id="cosmic-clock" style="margin-top: 2em; font-size: 1em; color: #fff0cc;"></div>
+  <div class="cosmic-clock" id="cosmic-clock"></div>
   <script>
     function getCosmicMessage(hour) {
       if (hour >= 4 && hour < 7) return "L’aube prépare le chant.";
